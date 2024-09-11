@@ -2,9 +2,9 @@
 
 Testes unitários são usados para verificar se os métodos de um programa estão funcionando como o previsto e ajudar a identificar bugs nos métodos.
 
-<p align="center">
+<div align="center">
 ![junit5-removebg-preview](https://github.com/user-attachments/assets/e60d8d59-d8e8-4c2e-9b6a-3399d75e0b90)
-</p>
+</div>
 
 ## Estrutura de Testes Unitários
 
