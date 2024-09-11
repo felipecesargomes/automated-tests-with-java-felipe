@@ -28,11 +28,11 @@ Dependendo da situação, deve-se implementar diversos testes unitários para um
 Testes unitários são projetados para garantir que cada parte do código funcione corretamente, tanto com parâmetros válidos quanto inválidos. Eles ajudam a identificar bugs e verificar se as funcionalidades estão operando como esperado. Além disso, os testes unitários devem ser mantidos e atualizados conforme o código é alterado. Se uma modificação no código quebra um teste que antes estava funcionando, isso é conhecido como um teste de regressão. Testes de regressão asseguram que novas mudanças no código não introduzam problemas em funcionalidades existentes que já estavam funcionando corretamente.
 
 ## Principio F.I.R.S.T
-Fast: Testes unitários que devem executar rapidamente, ou seja, não deve-se comunicar com servidores ou banco de dados remotos.
-Independent – Deve ser independentes uns dos outros e em ordem, então dependências deve ser mockadas.
-Repeatable – Testes unitários devem ser repetíveis, independente de ambiente.
-Self-validating – Os testes unitários deve se auto validarem.
-Thorough e Timely – Os testes unitários deve cobrir casos extremos, forçar parâmetros válidos e inválidos em busca de bugs.
+- Fast: Testes unitários que devem executar rapidamente, ou seja, não deve-se comunicar com servidores ou banco de dados remotos.
+- Independent – Deve ser independentes uns dos outros e em ordem, então dependências deve ser mockadas.
+- Repeatable – Testes unitários devem ser repetíveis, independente de ambiente.
+- Self-validating – Os testes unitários deve se auto validarem.
+- Thorough e Timely – Os testes unitários deve cobrir casos extremos, forçar parâmetros válidos e inválidos em busca de bugs.
 ## Testando Código em Isolamento
 É importante garantir que precisamos isolar apenas a regra de negócio do método que estamos testando para garantir que o erro não venha de nenhuma dependência que por ventura esse método possui.
 É necessário utilizar uma dependência mockada para simular uma injeção de dependência, testando nosso código isoladamente, identificando de onde vem o erro independente de dependências, pois não estamos interessados em testar as dependências, mas sim, a funcionalidade do método.
