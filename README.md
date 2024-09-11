@@ -2,7 +2,9 @@
 
 Testes unitários são usados para verificar se os métodos de um programa estão funcionando como o previsto e ajudar a identificar bugs nos métodos.
 
+<p align="center">
 ![junit5-removebg-preview](https://github.com/user-attachments/assets/e60d8d59-d8e8-4c2e-9b6a-3399d75e0b90)
+</p>
 
 ## Estrutura de Testes Unitários
 
@@ -41,7 +43,9 @@ Testes unitários são projetados para garantir que cada parte do código funcio
 - Testes de integração: Não é usado mocks nem objetos fakes. Envia requisições HTTP (reais) ou manipulando registros no banco de dados se necessário usando conexão real ou requisição real, sendo assim, executado mais lentamente.
 - Testes e2e: Testes ponta a ponta, executado lentamente, testando através de clique e entrada nos inputs.
 
+<p align="center">
 ![c4999f4a-8e98-401a-8473-d6a09063f512__1_-removebg-preview](https://github.com/user-attachments/assets/4d8c277b-e906-4be7-b629-98eea1da852e)
+</p>
 
 ## O que é o JUNIT5
 É a junção de 3 API’s.
