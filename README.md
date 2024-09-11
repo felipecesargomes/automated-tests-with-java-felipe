@@ -14,7 +14,7 @@ Os testes unitários são divididos em três partes principais:
 
 ## Dependências Externas por MOCK ou Objetos Fakes
 
-Dependências externas de um objeto devem ser substituídas por versões "FAKES", "MOCK" ou stubs durante os testes para isolar a funcionalidade e evitar efeitos colaterais indesejados.
+Dependências externas de um objeto devem ser substituídas por versões "FAKES", mocks ou stubs durante os testes para isolar a funcionalidade e evitar efeitos colaterais indesejados.
 
 ## Quantidade de Testes Unitários por Método
 
