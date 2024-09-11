@@ -38,7 +38,7 @@ Thorough e Timely – Os testes unitários deve cobrir casos extremos, forçar p
 É necessário utilizar uma dependência mockada para simular uma injeção de dependência, testando nosso código isoladamente, identificando de onde vem o erro independente de dependências, pois não estamos interessados em testar as dependências, mas sim, a funcionalidade do método.
 ## Pirâmides de Testes
 - Testes unitários: São os o que mais devemos escrever, são rápidos, utilizam de objetos fakes stubs ou mockadas para simular injeção de dependência.
-- Testes de integração: Não é usado mocks nem objetos fakes. Envia requisições HTTP (reais) ou manipulando registros no banco de dados se necessário, usando conexão real ou requisição real, sendo assim, executado mais lentamente.
+- Testes de integração: Não é usado mocks nem objetos fakes. Envia requisições HTTP (reais) ou manipulando registros no banco de dados se necessário usando conexão real ou requisição real, sendo assim, executado mais lentamente.
 - Testes e2e: Testes ponta a ponta, executado lentamente, testando através de clique e entrada nos inputs.
 
 ![c4999f4a-8e98-401a-8473-d6a09063f512__1_-removebg-preview](https://github.com/user-attachments/assets/4d8c277b-e906-4be7-b629-98eea1da852e)
