@@ -60,10 +60,16 @@ JUnit Vintage – Compatível para execução de testes escritos em JUnit 3 e JU
 
 Neste tópico, exploramos as *Assertion Messages* em testes. Essas mensagens são usadas para fornecer informações detalhadas quando uma asserção falha. Elas ajudam a identificar rapidamente o motivo de uma falha, tornando o processo de depuração mais eficiente. A prática de usar mensagens claras e descritivas nas asserções é crucial para entender o comportamento dos testes e diagnosticar problemas de forma mais eficaz.
 
+        assertEquals(expected, actual);
+
 ## Conhecendo as Lazy Assert Messages
 
 Aqui, discutimos *Lazy Assert Messages*, uma técnica que melhora a performance dos testes. Em vez de avaliar a mensagem de erro imediatamente, ela é avaliada apenas se a asserção falhar. Isso é útil para evitar o custo de criação de mensagens complexas quando os testes passam, otimizando o tempo de execução dos testes. A utilização de mensagens preguiçosas pode tornar a execução dos testes mais eficiente, especialmente quando as mensagens são grandes ou complexas.
 
+        assertEquals(expected, actual, () -> "(" + firstNumber + "/" + secondNumber + ")/2" + " did not produce expected result!");
+
 ## Conhecendo a Annotation @DisplayName
+
+        @DisplayName("Test (6.2 + 2)/2 = 4.1")
 
 Este tópico cobre a anotação `@DisplayName` do JUnit 5, que permite fornecer nomes personalizados e mais descritivos para métodos de teste. Em vez de usar os nomes padrão dos métodos, você pode definir nomes mais legíveis e explicativos. Isso melhora a legibilidade dos relatórios de teste e facilita a compreensão do propósito de cada teste. A anotação `@DisplayName` ajuda a criar uma documentação mais clara e compreensível para os testes.
