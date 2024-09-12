@@ -1,4 +1,4 @@
-package br.com.felipe.tests.automated_tests_with_java_felipe;
+package br.com.felipe;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
