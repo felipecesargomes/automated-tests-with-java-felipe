@@ -1,3 +1,6 @@
+![Java](https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white)
+![JUnit](https://img.shields.io/badge/JUnit-25A162?style=for-the-badge&logo=junit5&logoColor=white)
+
 # Teoria Testes Unitário
 
 Testes unitários são usados para verificar se os métodos de um programa estão funcionando como o previsto e ajudar a identificar bugs nos métodos.
