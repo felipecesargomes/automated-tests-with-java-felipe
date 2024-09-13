@@ -251,3 +251,6 @@ public class MathUtilsTest {
 
 **<span style="color: red; text-decoration: underline;">O assertThrows é uma maneira prática e eficaz de garantir que seu código se comporte conforme o esperado em situações de erro. Utilize-o para verificar a correta gestão de exceções em seus testes.</span>**
 
+## Comparando conteúdo de arrays
+
+Utilize o método **assertArrayEquals**
