@@ -259,4 +259,4 @@ Utilize o método **assertArrayEquals**
 
 @Timeout(value = 15, unit = TimeUnit.MILLISECONDS
 
-Use o timeout para garantir determinar o tempo máximo que o método pode demorar para ser executado antes de ser invalidado por timeout.
+Use o timeout para garantir e determinar o tempo máximo que o método pode demorar para ser executado antes de ser invalidado por timeout.
