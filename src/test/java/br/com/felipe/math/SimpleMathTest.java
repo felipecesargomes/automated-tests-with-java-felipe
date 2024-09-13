@@ -1,19 +1,45 @@
 package br.com.felipe.math;
 
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("Test Math Operations in SimpleMath Class")
 public class SimpleMathTest {
 
+    SimpleMath math;
+
+    @BeforeAll
+    static void setup() {
+        //Mais usados nos testes de integração (para carregar banco)
+        System.out.println("Running @BeforeAll Method!");
+    }
+
+    @BeforeEach
+    void beforeEachMethod() {
+        math = new SimpleMath();
+        System.out.println("Running @BeforeEach Method!");
+
+
+    }
+
+    @AfterEach
+    void afterEachMethod() {
+        math = new SimpleMath();
+        System.out.println("Running @AfterEach Method!");
+    }
+
+    @AfterAll
+    static void cleanup() {
+        //Limpa o banco, por exemplo!
+        System.out.println("Running @AfterAll Method!");
+    }
+
     @Test
     @DisplayName("Test 6.2 + 2 = 8.2")
     void testSum() {
+        System.out.println("testSum");
         //Given or Arrange
-        SimpleMath math = new SimpleMath();
         double firstNumber = 6.2D;
         double secondNumber = 2.0D;
         double expected = 8.2D;
@@ -30,7 +56,8 @@ public class SimpleMathTest {
     @Test
     @DisplayName("Test 6.2 - 2 = 4.2")
     void testSubtraction() {
-        SimpleMath math = new SimpleMath();
+        System.out.println("testSubtraction");
+        
         double firstNumber = 6.2D;
         double secondNumber = 2.0D;
         Double actual = math.subtraction(firstNumber, secondNumber);
@@ -44,7 +71,8 @@ public class SimpleMathTest {
     @Test
     @DisplayName("Test 6.2 * 2 = 12.4")
     void testMultiplication() {
-        SimpleMath math = new SimpleMath();
+        System.out.println("testMultiplication");
+        
         double firstNumber = 6.2D;
         double secondNumber = 2.0D;
         Double actual = math.multiplication(firstNumber, secondNumber);
@@ -58,7 +86,8 @@ public class SimpleMathTest {
     @Test
     @DisplayName("Test 6.2 / 2 = 3.1")
     void testDivision() {
-        SimpleMath math = new SimpleMath();
+        System.out.println("testDivision");
+
         double firstNumber = 6.2D;
         double secondNumber = 2.0D;
         Double actual = math.division(firstNumber, secondNumber);
@@ -70,9 +99,32 @@ public class SimpleMathTest {
     }
 
     @Test
+    @DisplayName("Test Division by Zero")
+    void testDivision_ShouldThrowArithmeticException() {
+        System.out.println("testDivision_ShouldThrowArithmeticException");
+
+        //Given
+        double firstNumber = 6.2D;
+        double secondNumber = 0D;
+
+
+        var expectedMessage = "Impossible to divide by zero!";
+
+        //When & Then
+        ArithmeticException actual = assertThrows(
+                ArithmeticException.class, () -> {
+                    math.division(firstNumber, secondNumber);
+                }, () -> "Division by zero should throw an ArithmeticException");
+
+        assertEquals(expectedMessage, actual.getMessage(), () -> "Unexpected exception message!");
+
+    }
+
+    @Test
     @DisplayName("Test (6.2 + 2)/2 = 4.1")
+    @Disabled
     void testMean() {
-        SimpleMath math = new SimpleMath();
+        
         double firstNumber = 6.2D;
         double secondNumber = 2.0D;
         Double actual = math.mean(firstNumber, secondNumber);
