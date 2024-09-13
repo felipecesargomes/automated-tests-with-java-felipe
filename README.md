@@ -151,7 +151,7 @@ public void testSomething() {
 @BeforeEach: Executado antes de cada teste.<br/>
 @Test: O próprio método de teste é executado.<br/>
 @AfterEach: Executado após cada teste.<br/>
-@AfterAll: Executado uma vez após todos os testes.<br/><br/>
+@AfterAll: Executado uma vez após todos os testes.<br/>
 
 ```java
 import org.junit.jupiter.api.AfterAll;
