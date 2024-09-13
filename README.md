@@ -77,8 +77,6 @@ Aqui, discutimos *Lazy Assert Messages*, uma técnica que melhora a performance 
 
 Este tópico cobre a anotação `@DisplayName` do JUnit 5, que permite fornecer nomes personalizados e mais descritivos para métodos de teste. Em vez de usar os nomes padrão dos métodos, você pode definir nomes mais legíveis e explicativos. Isso melhora a legibilidade dos relatórios de teste e facilita a compreensão do propósito de cada teste. A anotação `@DisplayName` ajuda a criar uma documentação mais clara e compreensível para os testes.
 
-## Ciclos de Vida do JUnit
-
 # Ciclo de Vida dos Testes no JUnit
 
 O JUnit define o ciclo de vida dos testes através de anotações que controlam a execução de métodos antes e depois dos testes, além da execução de cada teste. Abaixo está um resumo das principais anotações e o ciclo de vida associado:
@@ -188,3 +186,67 @@ public class ExampleTest {
     }
 }
 ```
+
+# Testando Exceções com `assertThrows`
+
+O método `assertThrows` é uma funcionalidade do JUnit 5 que permite testar se uma exceção específica é lançada durante a execução de um bloco de código. Isso é útil para validar comportamentos esperados em situações de erro. 
+
+## Estrutura Básica
+
+```java
+assertThrows(
+    Class<? extends Throwable> expectedType,
+    Executable executable,
+    String message
+)
+```
+
+- **expectedType**: O tipo de exceção que você espera que seja lançada. Normalmente, isso é uma classe que estende Throwable, como ArithmeticException, NullPointerException, etc.
+- **executable**: Um bloco de código que você deseja executar e que deve lançar a exceção esperada. Em JUnit 5, isso geralmente é uma expressão lambda ou uma referência a um método.
+- **message**: Uma mensagem que será exibida se a asserção falhar. Isso é opcional, mas pode ajudar a diagnosticar por que o teste falhou.
+
+### Exemplo de Uso:
+
+Suponha que você tenha um método que divide dois números e deseja garantir que ele lança uma ArithmeticException quando a divisão por zero é tentada.
+
+```java
+public class MathUtils {
+    public static double divide(double numerator, double denominator) {
+        if (denominator == 0) {
+            throw new ArithmeticException("Cannot divide by zero");
+        }
+        return numerator / denominator;
+    }
+}
+```
+
+Teste com assertThrows
+
+```java
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import org.junit.jupiter.api.Test;
+
+public class MathUtilsTest {
+
+    @Test
+    void testDivideByZero() {
+        ArithmeticException thrown = assertThrows(
+            ArithmeticException.class,
+            () -> MathUtils.divide(10, 0),
+            "Expected divide by zero to throw, but it didn't"
+        );
+
+        assertEquals("Cannot divide by zero", thrown.getMessage(), "Unexpected exception message");
+    }
+}
+```
+
+### Explicação
+
+- O bloco () -> MathUtils.divide(10, 0) é o código que deve lançar a exceção.<br>
+- ArithmeticException.class é a classe da exceção que você espera.<br>
+- A mensagem fornecida "Expected divide by zero to throw, but it didn't" será exibida se a exceção esperada não for lançada.<br>
+- thrown.getMessage() é usado para verificar se a mensagem da exceção corresponde à esperada.<br>
+
+** O assertThrows é uma maneira prática e eficaz de garantir que seu código se comporte conforme o esperado em situações de erro. Utilize-o para verificar a correta gestão de exceções em seus testes. **
