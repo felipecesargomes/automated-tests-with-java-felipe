@@ -147,11 +147,11 @@ public void testSomething() {
 }
 ```
 
-@BeforeAll: Executado uma vez antes de todos os testes.
-@BeforeEach: Executado antes de cada teste.
-@Test: O próprio método de teste é executado.
-@AfterEach: Executado após cada teste.
-@AfterAll: Executado uma vez após todos os testes.
+@BeforeAll: Executado uma vez antes de todos os testes.<br/>
+@BeforeEach: Executado antes de cada teste.<br/>
+@Test: O próprio método de teste é executado.<br/>
+@AfterEach: Executado após cada teste.<br/>
+@AfterAll: Executado uma vez após todos os testes.<br/><br/>
 
 ```java
 import org.junit.jupiter.api.AfterAll;
