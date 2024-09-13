@@ -76,3 +76,115 @@ Aqui, discutimos *Lazy Assert Messages*, uma técnica que melhora a performance 
         @DisplayName("Test (6.2 + 2)/2 = 4.1")
 
 Este tópico cobre a anotação `@DisplayName` do JUnit 5, que permite fornecer nomes personalizados e mais descritivos para métodos de teste. Em vez de usar os nomes padrão dos métodos, você pode definir nomes mais legíveis e explicativos. Isso melhora a legibilidade dos relatórios de teste e facilita a compreensão do propósito de cada teste. A anotação `@DisplayName` ajuda a criar uma documentação mais clara e compreensível para os testes.
+
+## Ciclos de Vida do JUnit
+
+# Ciclo de Vida dos Testes no JUnit
+
+O JUnit define o ciclo de vida dos testes através de anotações que controlam a execução de métodos antes e depois dos testes, além da execução de cada teste. Abaixo está um resumo das principais anotações e o ciclo de vida associado:
+
+## Ciclo de Vida do JUnit
+
+### `@BeforeAll`
+- **Propósito**: Executa um método uma vez antes de todos os testes na classe de teste.
+- **Uso**: Configuração global necessária para todos os testes. Por exemplo, conectar a um banco de dados ou configurar recursos compartilhados.
+- **Requisitos**: O método anotado com `@BeforeAll` deve ser `static`.
+
+```java
+@BeforeAll
+public static void setup() {
+    // Código para configurar recursos necessários antes de qualquer teste
+}
+```
+### `@AfterAll`
+
+- **Propósito**: Executa um método uma vez após todos os testes na classe de teste.
+- **Uso**: Limpeza global após todos os testes. Por exemplo, desconectar de um banco de dados ou liberar recursos compartilhados.
+- **Requisitos**: O método anotado com @AfterAll deve ser static.
+
+```java
+@AfterAll
+public static void cleanup() {
+    // Código para limpar ou liberar recursos após todos os testes
+}
+```
+
+### `@BeforeEach`
+
+- **Propósito**: Executa um método antes de cada teste individual.
+- **Uso**: Configuração que é específica para cada teste. Por exemplo, inicializar objetos ou definir estados que cada teste precisa.
+- **Requisitos**: O método anotado com @BeforeEach não precisa ser static.
+
+```java
+@BeforeEach
+public void init() {
+    // Código para configurar o ambiente de teste antes de cada teste
+}
+```
+
+### `@AfterEach`
+
+- **Propósito**: Executa um método após cada teste individual.
+- **Uso**: Limpeza que é específica para cada teste. Por exemplo, remover dados temporários ou redefinir estados.
+- **Requisitos**: O método anotado com @AfterEach não precisa ser static.
+
+```java
+@AfterEach
+public void tearDown() {
+    // Código para limpar o ambiente de teste após cada teste
+}
+```
+
+### `@Test`
+
+- **Propósito**: Define um método como um caso de teste.
+- **Uso**:Contém o código que testa a funcionalidade específica. O método anotado com @Test deve ser public, void, e não pode aceitar argumentos.
+
+```java
+@Test
+public void testSomething() {
+    // Código para verificar a funcionalidade desejada
+}
+```
+
+@BeforeAll: Executado uma vez antes de todos os testes.
+@BeforeEach: Executado antes de cada teste.
+@Test: O próprio método de teste é executado.
+@AfterEach: Executado após cada teste.
+@AfterAll: Executado uma vez após todos os testes.
+
+```java
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+public class ExampleTest {
+
+    @BeforeAll
+    public static void setup() {
+        // Código de configuração global
+    }
+
+    @AfterAll
+    public static void cleanup() {
+        // Código de limpeza global
+    }
+
+    @BeforeEach
+    public void init() {
+        // Código de configuração antes de cada teste
+    }
+
+    @AfterEach
+    public void tearDown() {
+        // Código de limpeza após cada teste
+    }
+
+    @Test
+    public void testSomething() {
+        // Código do teste
+    }
+}
+```
