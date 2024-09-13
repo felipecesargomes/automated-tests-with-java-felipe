@@ -254,3 +254,6 @@ public class MathUtilsTest {
 ## Comparando conteúdo de arrays
 
 Utilize o método **assertArrayEquals**
+
+## Teste de Performance
+
