@@ -1,6 +1,5 @@
 package br.com.felipe.math;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -9,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @DisplayName("Test Math Operations in SimpleMath Class")
 public class SimpleMathTest {
-    
+
     @Test
     @DisplayName("Test 6.2 + 2 = 8.2")
     void testSum() {
