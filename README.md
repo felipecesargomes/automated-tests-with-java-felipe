@@ -257,3 +257,6 @@ Utilize o método **assertArrayEquals**
 
 ## Teste de Performance
 
+@Timeout(value = 15, unit = TimeUnit.MILLISECONDS
+
+Use o timeout para garantir determinar o tempo máximo que o método pode demorar para ser executado antes de ser invalidado por timeout.
