@@ -249,4 +249,5 @@ public class MathUtilsTest {
 - A mensagem fornecida "Expected divide by zero to throw, but it didn't" será exibida se a exceção esperada não for lançada.<br>
 - thrown.getMessage() é usado para verificar se a mensagem da exceção corresponde à esperada.<br>
 
-**<u>O assertThrows é uma maneira prática e eficaz de garantir que seu código se comporte conforme o esperado em situações de erro. Utilize-o para verificar a correta gestão de exceções em seus testes.</u>**
+**<span style="color: red; text-decoration: underline;">O assertThrows é uma maneira prática e eficaz de garantir que seu código se comporte conforme o esperado em situações de erro. Utilize-o para verificar a correta gestão de exceções em seus testes.</span>**
+
